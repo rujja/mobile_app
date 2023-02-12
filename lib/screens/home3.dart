@@ -5,7 +5,7 @@ import 'package:mobile_app/screens/cubit/home_cubit.dart';
 
 import '../customCard/customCard3.dart';
 
-final _formKey = GlobalKey<FormState>();
+// final _formKey = GlobalKey<FormState>();
 
 class Home3 extends StatefulWidget {
   const Home3({Key? key}) : super(key: key);
@@ -47,11 +47,10 @@ class _Home3State extends State<Home3> {
           children: [
             BlocBuilder<HomeCubit, HomeState>(
               builder: (context, state) {
-                print('state.counter = ${state.counter}');
                 return GestureDetector(
                     onTap: () {
                       print(state.counter);
-                      HomeCubit().incrementcount();
+                      context.read<HomeCubit>().incrementCount();
                     },
                     child: Text('counter = ${state.counter}'));
               },

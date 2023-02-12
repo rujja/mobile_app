@@ -16,9 +16,13 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Mobile App',
-      home: BlocProvider<HomeCubit>(
-        create: (context) => HomeCubit(),
-        child: Home3(),
+      home: MultiBlocProvider(
+        providers: [
+          BlocProvider<HomeCubit>(
+            create: (context) => HomeCubit(),
+          ),
+        ],
+        child: const Home3(),
       ),
     );
   }

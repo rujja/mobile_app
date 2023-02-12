@@ -17,20 +17,19 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$HomeState {
   int get counter => throw _privateConstructorUsedError;
-  String get theme => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(int counter, String theme) initial,
+    required TResult Function(int counter) initial,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(int counter, String theme)? initial,
+    TResult? Function(int counter)? initial,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(int counter, String theme)? initial,
+    TResult Function(int counter)? initial,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -61,7 +60,7 @@ abstract class $HomeStateCopyWith<$Res> {
   factory $HomeStateCopyWith(HomeState value, $Res Function(HomeState) then) =
       _$HomeStateCopyWithImpl<$Res, HomeState>;
   @useResult
-  $Res call({int counter, String theme});
+  $Res call({int counter});
 }
 
 /// @nodoc
@@ -78,17 +77,12 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
   @override
   $Res call({
     Object? counter = null,
-    Object? theme = null,
   }) {
     return _then(_value.copyWith(
       counter: null == counter
           ? _value.counter
           : counter // ignore: cast_nullable_to_non_nullable
               as int,
-      theme: null == theme
-          ? _value.theme
-          : theme // ignore: cast_nullable_to_non_nullable
-              as String,
     ) as $Val);
   }
 }
@@ -100,7 +94,7 @@ abstract class _$$_InitialCopyWith<$Res> implements $HomeStateCopyWith<$Res> {
       __$$_InitialCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int counter, String theme});
+  $Res call({int counter});
 }
 
 /// @nodoc
@@ -114,17 +108,12 @@ class __$$_InitialCopyWithImpl<$Res>
   @override
   $Res call({
     Object? counter = null,
-    Object? theme = null,
   }) {
     return _then(_$_Initial(
       counter: null == counter
           ? _value.counter
           : counter // ignore: cast_nullable_to_non_nullable
               as int,
-      theme: null == theme
-          ? _value.theme
-          : theme // ignore: cast_nullable_to_non_nullable
-              as String,
     ));
   }
 }
@@ -132,16 +121,14 @@ class __$$_InitialCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_Initial implements _Initial {
-  const _$_Initial({required this.counter, required this.theme});
+  const _$_Initial({required this.counter});
 
   @override
   final int counter;
-  @override
-  final String theme;
 
   @override
   String toString() {
-    return 'HomeState.initial(counter: $counter, theme: $theme)';
+    return 'HomeState.initial(counter: $counter)';
   }
 
   @override
@@ -149,12 +136,11 @@ class _$_Initial implements _Initial {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_Initial &&
-            (identical(other.counter, counter) || other.counter == counter) &&
-            (identical(other.theme, theme) || other.theme == theme));
+            (identical(other.counter, counter) || other.counter == counter));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, counter, theme);
+  int get hashCode => Object.hash(runtimeType, counter);
 
   @JsonKey(ignore: true)
   @override
@@ -165,27 +151,27 @@ class _$_Initial implements _Initial {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(int counter, String theme) initial,
+    required TResult Function(int counter) initial,
   }) {
-    return initial(counter, theme);
+    return initial(counter);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(int counter, String theme)? initial,
+    TResult? Function(int counter)? initial,
   }) {
-    return initial?.call(counter, theme);
+    return initial?.call(counter);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(int counter, String theme)? initial,
+    TResult Function(int counter)? initial,
     required TResult orElse(),
   }) {
     if (initial != null) {
-      return initial(counter, theme);
+      return initial(counter);
     }
     return orElse();
   }
@@ -220,13 +206,10 @@ class _$_Initial implements _Initial {
 }
 
 abstract class _Initial implements HomeState {
-  const factory _Initial(
-      {required final int counter, required final String theme}) = _$_Initial;
+  const factory _Initial({required final int counter}) = _$_Initial;
 
   @override
   int get counter;
-  @override
-  String get theme;
   @override
   @JsonKey(ignore: true)
   _$$_InitialCopyWith<_$_Initial> get copyWith =>
