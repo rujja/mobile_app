@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:mobile_app/frontPage/frontpage.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:mobile_app/screens/cubit/home_cubit.dart';
+import 'package:mobile_app/screens/home3.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,11 +13,13 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Mobile App',
-      home: Frontpage(),
-      
+      home: BlocProvider<HomeCubit>(
+        create: (context) => HomeCubit(),
+        child: Home3(),
+      ),
     );
   }
 }

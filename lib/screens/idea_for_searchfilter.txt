@@ -1,0 +1,30 @@
+myList = [
+    'ram', 'shyam', 'sita', 'hari', 'hanuman', 'laaxman', 'mahesh', 'shiva',
+]
+mySearchList = myList
+search = 'ram'
+
+mySearchList = ['ram']
+
+search = 'shyam'
+
+mySearchList = ['shyam']
+
+
+// first we tried search function using where with condition == (takes exact same value only)
+// solution --> used where with contains in condition in the list ( takes any aplhabet in the entered value)
+// when we tried uppercase the result was not shown
+// solution --> we converted each string value to lowercase or uppercase
+
+// when we tried to filter or search in myList the resulted  new list  replaced old myList
+// this made re-search in new myList which had lesser data
+// to solve this problem we introduced new state mySearchList
+// mySearchList stores filtered data whereas myList contains all data
+// so whenever we want to search we search from myList and the filtered data is placed in mySearchList
+
+
+// when we tried to delete the filtered data the delete action flopped
+// (when we tried to delete element it was only removed in myList but not in mySearchList{UI})
+//slution-->  after delete we did re-search from  new myList
+
+
